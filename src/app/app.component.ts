@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+<<<<<<< Updated upstream
   nav_position: string = 'start';
 
   onTogglePosition(position: string) {
@@ -31,3 +32,12 @@ export class AppComponent {
       }
   }
 }*/
+=======
+  title = 'lms1';
+
+  constructor(){
+
+  }
+}
+
+>>>>>>> Stashed changes
