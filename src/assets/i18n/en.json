@@ -1,0 +1,148 @@
+{ 
+   
+    "Dashboard": "Dashboard",
+    "Charts": "Charts",
+    "Tables": "Tables",
+    "Forms": "Forms",
+    "Material Grid": "Material Grid",
+    "Material Component": "Material Component",
+    "Menu": "Menu",
+    "Submenu": "Submenu",
+    "Blank Page": "Blank Page",
+    "More Theme": "More Themes",
+    "Download Now": "Download Now",
+    "Language": "Language",
+    "English": "English",
+    "French": "French",
+    "Urdu": "Urdu",
+    "Spanish": "Spanish",
+    "Italian": "Italian",
+    "Farsi": "Farsi",
+    "German": "German",
+    "Simplified Chinese": "Simplified Chinese",
+    "Search": "Search",
+    "Settings": "Settings",
+    "Profile": "Profile",
+    "Inbox": "Inbox",
+    "Log Out": "Log Out",
+    "Pending Task": "Pending Task",
+    "In queue": "In queue",
+    "Mail": "Mail",
+    "View All": "View All",
+       
+    "Add Vdb" : "Add New VDB",
+    "New Vdb Name" : "New Vdb Name",
+    "Select a data Source type" : "Select a data Source type",
+    "Description is required" : " Description is required",
+    "Field Name is Mandetory" : "Field Name is Mandetory",
+    "Please Select Data Type" : "Please Select Data Type" ,
+
+
+    "SIDEBAR":
+    {
+        "DATASOURCE_TYPE": "Datasource type",
+        "DATASOURCE_DETAILS" : "Datasource details",
+        "VDB_CONFIGURATION" : "VDB configuration",
+        "VIRTUAL_DATABASE" : "Virtual Database",
+        "DASHBOARD"  :"Dashboard",
+        "QUERY_CONFIGURATION" : "Query Configuration",
+        "TARGET_CONFIGURATION" : "Target Configuration",
+        "REPORT" : "Report",
+        "REPORT_CONFIGURATION" : "Report Configuration",
+        "WORKFLOW" : "Workflow",
+        "JOB" : "Job",
+        "JOB_EXECUTION" : "Job Execution",
+        "SCHEDULE" : "Schedule"
+    },
+
+    "VDB_CONFIGURATION":
+    {
+        "VDB" : "VDB Configuration",
+        "NEW_VDB_BUTTON" : "New VDB",
+        "VDB_TABLE_ID_HEADER" : "ID",
+        "VDB_TABLE_NAME_HEADER" : "Name",
+        "VDB_DEPLOY_BUTTON" : "Deployed",
+        "VDB_UNDEPLOY_BUTTON": "Undeploy",
+        "VDB_ACTION_BUTTON" : "Action",
+        "VDB_DETAILS_BUTTON" : "Details",
+        "VDB_EDIT_BUTTON" : "Description"
+    },
+    "VDB_CREATE" :{
+        "ADD_VDB" : "Add New VDB",
+        "ADD_MODEL" : "Add Model",
+        "ADD_BACK" : "Back",
+        "ADD_PROPERTIES" : "Add properties:",
+        "SELECT_PROPERTY" : "Select a property",
+        "MODEL_NAME": "Model Name",
+        "DATA_SOURCE_TYPE" : "Data Source type",
+        "VIRTUAL" : "Virtual",
+        "SAVE" : "Save"
+    },
+    "DIALOG_ADD_MODEL":{
+        "MODEL_DATA"  :"Model Data",
+        "MODEL_NAME"  :"Model Name",
+        "MODEL_FIELDS_NAME" : "Model Field Name"
+    },
+    
+    "VDB_DETAILS" : {
+        "VDB_DETAILS": "VDB Details",
+        "VDB_NAME" : "VDB Name:",
+        "VDB_DETAILS_BACK_BTN" : "Back",
+        "VDB_DETAILS_SAVE_BTN" : " Save" ,
+        "ADD_MODEL_BTN" : "Add Model",
+        "VDB_DESCRIPTION" : "Description"
+
+    },
+
+    "ADD_MODEL_MODAL_COMPONENT":{
+        "ADD_MODEL" : "Add Model",
+        "DATASOURCE_DETAILS" : "Datasource Details Type",
+        "FIELDS" : "Fields",
+        "SUBMIT" : "Submit",
+        "CLOSE" : "Close",
+        "ISVIRTUAL_CHECKBOX" : "Virtual"
+        
+    },
+     "DATA_SOURCE_COMP":{
+        "DATA_SOURCE_HEADER" : " Data Source"
+    },
+    "VALIDATION_MESSEGE" : {
+        "VDB_NAME_IS_REQUIRED" : "VDB Name is required",
+        "VDB_MODEL_NAME_NOT_VALID" : "Model name is not valid.",
+        "MODEL_NAME_IS_REQUIRED" : "Model Name is required"
+    }
+    ,
+    "TARGET_CONFIGURATION":{
+        "BACK_BUTTON" : "Back",
+        "SUBMIT": "Save",
+        "CLOSE": "Close",
+        "TARGET_LIST": "Target List",
+        "NAME" : "Name",
+        "DESCRIPTION" : "Description",
+        "TABLE_NAME" : "Table Name",
+        "ACTION": "Action",
+        "TARGET_CONFIGvURATION": "Target Configuration"
+
+    },
+    "JOB_EXECUTION": {
+        "JOB_EXECUTION_STATUS" : "Job Execution Status",
+        "ID" : "Id",
+        "JOB_NAME": "Job Name",
+        "JOB_RUN_ID" : "Job Run Id",
+        "START_TIME" : "Start Time",
+        "END_TIME" : "End Time",
+        "NEXT_RUN_TIME": "Next Run Time",
+        "STATUS": "Status",
+        "ACTION" : "Action"
+    },
+    "JOB_DETAILS":{
+        "JOB_EXECUTION_STEPS" : "Job Execution Steps",
+        "ID" : "Id",
+        "NAME" : "Name",
+        "OPERATOR" : "Operator",
+        "DESCRIPTION" : "Description",
+        "RETRYCOUNT" : "RetryCount",
+        "EXECUTION_STATUS" : "ExecutionStatus"
+    }
+}
+

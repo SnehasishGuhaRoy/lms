@@ -1,48 +1,46 @@
-import { AgmCoreModule } from '@agm/core';
+import { LayoutModule } from '@angular/cdk/layout';
+import { OverlayModule } from '@angular/cdk/overlay';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app.routing';
-import { ComponentsModule } from './components/components.module';
-import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
+import { SharedModule } from "../app/shared/shared.module";
 
-
-
-
-const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  }
-];
-
+// AoT requires an exported function for factories
+export const createTranslateLoader = (http: HttpClient) => {
+    /* for development
+    return new TranslateHttpLoader(
+        http,
+        '/start-javascript/sb-admin-material/master/dist/assets/i18n/',
+        '.json'
+    );*/
+    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+};
 
 @NgModule({
-  imports: [
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-    ComponentsModule,
-    RouterModule.forRoot(routes),
-    AppRoutingModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    }),
-    AdminLayoutModule
-  ],
-  declarations: [
-    AppComponent
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        LayoutModule,
+        OverlayModule,
+        HttpClientModule,
+        SharedModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: createTranslateLoader,
+                deps: [HttpClient]
+            }
+        })
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
