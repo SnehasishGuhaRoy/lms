@@ -1,0 +1,76 @@
+@import 'material';
+@import 'main';
+@import 'utils';
+@import 'responsive';
+@import '~select2/dist/css/select2.min.css';
+
+.addIconCursor{
+    cursor: pointer;
+  }
+  .float-right{
+    float: right;
+  }
+  .mat-dialog-modal-header-card{
+    background-color: #3f51b5;
+     color:white ;
+     margin-left: -24px;
+     margin-right: -24px;
+     margin-top: -24px;
+     height: 80px;
+  }
+
+
+.with-icon {
+    display: flex;
+    align-items: center;
+}
+
+hr {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 8px auto;
+  height: 0;
+  width: 100%;
+  max-height: 0;
+  font-size: 1px;
+  line-height: 0;
+  clear: both;
+  border: none;
+  border-top: 1px solid #aaaaaa;
+  border-bottom: 1px solid #ffffff;
+}
+table {
+  width: 100%;
+}
+.cdk-overlay-container {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.cdk-overlay-pane {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  pointer-events: auto;
+  box-sizing: border-box;
+  z-index: 1000;
+  display: -webkit-box;
+  display: flex;
+  background: #fff;
+  border: 1px solid #6c757d;
+  padding: 3px 10px 5px 10px;
+}
+
+// not required but can help with mobile right click
+.target {
+  user-select: none;
+}
+.pointer{
+  cursor: pointer;
+}
+.context-menu {cursor: context-menu;}

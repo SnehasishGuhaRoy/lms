@@ -1,40 +1,16 @@
-import { Component } from '@angular/core';
-import { Inject, Injectable } from '@angular/core';
-import { LOCAL_STORAGE, StorageService } from 'angular-webstorage-service';
+import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
+export class AppComponent implements OnInit {
+    constructor(private translate: TranslateService) {
+        translate.setDefaultLang('en');
+    }
 
- 
-@Injectable()
-export class AppComponent {
-
-  constructor(@Inject(LOCAL_STORAGE) private storage: StorageService) { }
-
-  id = 'user';
-
-  person = {
-    name: "Obaseki Nosa",
-    location: "Lagos",
-};
-
-  public addStudent(): void {
-    const awesomenessLevel: string = this.id;
-    console.log(awesomenessLevel);
-    this.storage.set(awesomenessLevel,JSON.stringify(this.person));
+    ngOnInit() {
+    }
 }
-
-  printStuden() : void {
-    console.log(this.storage.get('user'));
-  }
-
-  deleteStuden() : void {
-    window.localStorage.removeItem('user');
-  }
-
-};
-
-
