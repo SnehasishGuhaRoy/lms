@@ -1,11 +1,11 @@
 export interface Student {
-    studentId: string;
+    studentId?: string;
     firstName: string;
     lastName: string;
     email: string,
     phoneNo : number,
-    subject: string[];
+    subject: string;
     class: string;
-    languageKnnown: string[];
+    languageKnnown: string;
     location: string
 }

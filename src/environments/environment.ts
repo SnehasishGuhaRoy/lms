@@ -5,8 +5,16 @@
 export const environment = {
   production: false,
   // apiUrl: 'http://206.189.150.18:9090/',
-  apiUrl : 'http://localhost:8888'
-  
+  apiUrl : 'http://localhost:8888',
+  firebase : {
+    apiKey: "AIzaSyDLsG90qDKNJfbWeZtOqkh7uCPLFp3T1lg",
+    authDomain: "lmsstudent-627fd.firebaseapp.com",
+    databaseURL: "https://lmsstudent-627fd.firebaseio.com",
+    projectId: "lmsstudent-627fd",
+    storageBucket: "",
+    messagingSenderId: "646613971681",
+    appId: "1:646613971681:web:431b984c6a8ee3ab"
+  }
 };
 
 /*

@@ -10,7 +10,6 @@ import {
       MatDialogModule,
       MatSelectModule, 
       MatCheckboxModule, 
-      MatAutocompleteModule,
       MatListModule, 
       MatMenuModule, 
       MatSidenavModule,
@@ -19,7 +18,9 @@ import {
       MatInputModule,
       MatProgressSpinnerModule,
       MatSortModule,
-      MatSnackBarModule
+      MatSnackBarModule,
+      MatTableDataSource,
+      MatAutocompleteModule
 }from '@angular/material';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTreeModule } from '@angular/material/tree';
@@ -56,7 +57,8 @@ import { MatStepperModule } from '@angular/material';
     MatTooltipModule,
     MatSnackBarModule,
     CdkStepperModule,
-    MatStepperModule
+    MatStepperModule,
+    MatSortModule
   ],
   exports: [
     MatGridListModule,

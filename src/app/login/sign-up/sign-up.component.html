@@ -1,0 +1,49 @@
+<mat-card>
+    <mat-card-title></mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="signUp" (ngSubmit)="addStudent()">
+
+            <b class="">Registration</b>
+
+            <mat-form-field [floatLabel]="'Enter the String'" style="width: 100%">
+                <input formControlName="studentId" matInput placeholder="Student Roll">
+            </mat-form-field>
+
+            <mat-form-field style="width: 100%">
+                <input formControlName="firstName" matInput placeholder="First Name :">
+            </mat-form-field>
+
+            <mat-form-field style="width: 100%">
+                <input formControlName="lastName" matInput placeholder="Last Name :">
+            </mat-form-field>
+
+            <mat-form-field style="width: 100%">
+                <input formControlName="email" matInput placeholder="Email-ID :">
+            </mat-form-field>
+
+            <mat-form-field style="width: 100%">
+                <input formControlName="phoneNo" matInput placeholder="Phone Number :">
+            </mat-form-field>
+
+            <mat-form-field style="width: 100%">
+                <input formControlName="subject" matInput placeholder="Subject :">
+            </mat-form-field>
+
+            <mat-form-field style="width: 100%">
+                <input formControlName="class" matInput placeholder="Clas :">
+            </mat-form-field>
+
+            <mat-form-field style="width: 100%">
+                <input formControlName="languageKnnown" matInput placeholder="Language Known :">
+            </mat-form-field>
+
+            <div>
+                <ul>
+                    <button mdbBtn type="subnit" color="primary" rounded="true" mdbWavesEffect>Submit</button>
+
+                    <button type="button" (click)="onClose()">Cancel</button>
+                </ul>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
