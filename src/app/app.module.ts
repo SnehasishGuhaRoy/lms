@@ -10,8 +10,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from "../app/shared/shared.module";
-import { StudentModule } from './Students/student/student.module';
-
 
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
@@ -34,7 +32,6 @@ export const createTranslateLoader = (http: HttpClient) => {
         OverlayModule,
         HttpClientModule,
         SharedModule,
-        StudentModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
