@@ -10,6 +10,8 @@ import { CronEditorModule } from "cron-editor";
 import { TimezonePickerModule } from 'ng2-timezone-selector';
 import { NgxGraphModule } from "@swimlane/ngx-graph";
 import { ContextMenuModule } from '@ctrl/ngx-rightclick';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [],
@@ -23,7 +25,8 @@ import { ContextMenuModule } from '@ctrl/ngx-rightclick';
     CronEditorModule,
     TimezonePickerModule,
     NgxGraphModule,
-    ContextMenuModule
+    ContextMenuModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   exports: [
     TranslateModule,
@@ -35,7 +38,8 @@ import { ContextMenuModule } from '@ctrl/ngx-rightclick';
     CronEditorModule,
     TimezonePickerModule,
     NgxGraphModule,
-    ContextMenuModule
+    ContextMenuModule,
+    AngularFireModule
   ]
 })
 export class ThirdPartyModule { }

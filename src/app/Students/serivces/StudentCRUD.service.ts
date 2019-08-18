@@ -1,10 +1,11 @@
 import { Injectable, Inject } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Student } from 'src/app/model/Student';
+import { StudentModule } from '../student/student.module';
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: StudentModule
 })
 export class CrudService {
 
