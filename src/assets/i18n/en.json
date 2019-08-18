@@ -1,6 +1,10 @@
 { 
    
+<<<<<<< HEAD
     "Dashboard": "Dashboard",
+=======
+    "Dashboard": "Dashboard 123",
+>>>>>>> master
     "Charts": "Charts",
     "Tables": "Tables",
     "Forms": "Forms",
