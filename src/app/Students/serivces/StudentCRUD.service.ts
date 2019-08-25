@@ -9,18 +9,18 @@ import { StudentModule } from '../student/student.module';
 })
 export class CrudService {
 
-  static count:number=0;
-  constructor(private fireStore : AngularFirestore) { }
+  static count: number = 0;
+  constructor(private fireStore: AngularFirestore) { }
 
-  studentsList : Student[];
+  studentsList: Student[];
   id = 'user';
 
-   addStudent(data : Student){
-     data.studentId=String(++CrudService.count);
+  addStudent(data: Student) {
+    data.studentId = String(++CrudService.count);
     this.fireStore.collection('students').add(data);
   }
 
-  getStudents(){
+  getStudents() {
     return this.fireStore.collection('students').snapshotChanges();
   }
 

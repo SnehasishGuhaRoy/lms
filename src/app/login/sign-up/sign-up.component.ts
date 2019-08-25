@@ -14,22 +14,35 @@ export class SignUpComponent implements OnInit {
 
   constructor(public fb: FormBuilder, public service: CrudService) {
 
-    this.signUp = fb.group({
+    let loginDetails : FormGroup = fb.group({
+      'UserName' : [null, Validators.required],
+      'Password' : [null, Validators.required]
+    });
+
+    let  studentDetails: FormGroup = fb.group({
       'firstName': [null, Validators.required],
       'lastName': [null, Validators.required],
       'email': [null, Validators.compose([Validators.required, Validators.email])],
-      'phoneNo': [null, Validators.compose([Validators.required, Validators.pattern('/(6|7|8|9)\d{9}/')])],
+      'phoneNo': [null, Validators.compose([Validators.required, Validators.pattern('/(6|7|8|9)\d{9}/'),Validators.maxLength(10)])],
       'subject': [null, Validators.required],
       'class': [null, Validators.required],
       'languageKnnown': [null, Validators.required],
       'location': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(30)])]
-    })
+    });
+
+    this.signUp = fb.group({
+      login:loginDetails,
+      details:studentDetails
+    });
 
   }
 
 
   addStudent() {
-    this.service.addStudent(this.signUp.value);
+    if(this.signUp.valid){
+      this.service.addStudent(this.signUp.value.details);
+    }
+    
   }
 
   ngOnInit() {}

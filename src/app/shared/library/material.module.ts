@@ -19,8 +19,8 @@ import {
       MatProgressSpinnerModule,
       MatSortModule,
       MatSnackBarModule,
-      MatTableDataSource,
-      MatAutocompleteModule
+      MatAutocompleteModule,
+      MatRadioModule
 }from '@angular/material';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTreeModule } from '@angular/material/tree';
@@ -58,7 +58,8 @@ import { MatStepperModule } from '@angular/material';
     MatSnackBarModule,
     CdkStepperModule,
     MatStepperModule,
-    MatSortModule
+    MatSortModule,
+    MatRadioModule
   ],
   exports: [
     MatGridListModule,
@@ -85,7 +86,8 @@ import { MatStepperModule } from '@angular/material';
     MatTooltipModule,
     MatSnackBarModule,
     CdkStepperModule,
-    MatStepperModule
+    MatStepperModule,
+    MatRadioModule
   ]
 })
 export class MaterialModule { }
