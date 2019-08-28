@@ -23,7 +23,7 @@ export class SignUpComponent implements OnInit {
       'firstName': [null, Validators.required],
       'lastName': [null, Validators.required],
       'email': [null, Validators.compose([Validators.required, Validators.email])],
-      'phoneNo': [null, Validators.compose([Validators.required, Validators.pattern('/(6|7|8|9)\d{9}/'),Validators.maxLength(10)])],
+      'phoneNo': [null, Validators.compose([Validators.required, Validators.pattern('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/')])],
       'subject': [null, Validators.required],
       'class': [null, Validators.required],
       'languageKnnown': [null, Validators.required],
@@ -40,7 +40,8 @@ export class SignUpComponent implements OnInit {
 
   addStudent() {
     if(this.signUp.valid){
-      this.service.addStudent(this.signUp.value.details);
+      
+      this.service.addStudent(this.signUp.value);
     }
     
   }

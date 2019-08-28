@@ -1,0 +1,16 @@
+<div>
+<label>Choose the Catagory:</label>
+<!-- <button type="button" class="close" aria-label="Close">
+  <span aria-hidden="true">×</span>
+</button> -->
+ <div>
+  <mat-radio-group
+  [(ngModel)]="favoriteSeason">
+  <mat-radio-button class="example-radio-button" *ngFor="let item of data.itemsList" [value]="item.name">
+    {{item.name}}
+  </mat-radio-button>
+</mat-radio-group>
+<div>
+<button mat-raised-button color="primary" [disabled]="!favoriteSeason" (click)="onSelect()">Select</button>&nbsp;&nbsp;
+<button mat-raised-button color="primary" (click)="close()">Cancel</button>
+</div> 
