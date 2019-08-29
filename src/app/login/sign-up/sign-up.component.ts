@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormsModule, NgForm } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
 import { CrudService } from 'src/app/Students/serivces/StudentCRUD.service';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,7 +13,7 @@ export class SignUpComponent implements OnInit {
 
   signUp: FormGroup;
 
-  constructor(public fb: FormBuilder, public service: CrudService) {
+  constructor(public fb: FormBuilder, public service: CrudService, public loginService : LoginService) {
 
     let loginDetails : FormGroup = fb.group({
       'UserName' : [null, Validators.required],
@@ -23,7 +24,7 @@ export class SignUpComponent implements OnInit {
       'firstName': [null, Validators.required],
       'lastName': [null, Validators.required],
       'email': [null, Validators.compose([Validators.required, Validators.email])],
-      'phoneNo': [null, Validators.compose([Validators.required, Validators.pattern('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/')])],
+      'phoneNo': [null, Validators.compose([Validators.required/* , Validators.pattern('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/') */])],
       'subject': [null, Validators.required],
       'class': [null, Validators.required],
       'languageKnnown': [null, Validators.required],
@@ -39,11 +40,11 @@ export class SignUpComponent implements OnInit {
 
 
   addStudent() {
-    if(this.signUp.valid){
-      
-      this.service.addStudent(this.signUp.value);
+    console.log("inside Add");
+      if(this.signUp.valid){
+      console.log("Inside valid");
+      this.service.addStudent(this.signUp.value);  
     }
-    
   }
 
   ngOnInit() {}

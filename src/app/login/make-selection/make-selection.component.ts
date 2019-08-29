@@ -9,18 +9,18 @@ import { Router } from '@angular/router';
 })
 export class MakeSelectionComponent implements OnInit {
 
-  favoriteSeason : String;
+  makeSelection : String;
   constructor(private router: Router,public modalRef: MatDialogRef<MakeSelectionComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
   }
 
   onSelect(){
-    if (this.favoriteSeason = 'Student'){
+    if (this.makeSelection = 'Student'){
         this.modalRef.close();
         this.router.navigate(['/login/signUp']);
     }
-    if (this.favoriteSeason = 'Teaacher'){
+    if (this.makeSelection = 'Teaacher'){
 
     }
   }
