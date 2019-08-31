@@ -14,5 +14,6 @@ export class StatComponent implements OnInit {
 
     constructor() {}
 
+    
     ngOnInit() {}
 }

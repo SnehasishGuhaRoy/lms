@@ -12,6 +12,18 @@
     </form> -->
     <span class="nav-spacer"></span>
    
+    <button class="hidden-sm" mat-icon-button [matMenuTriggerFor]="admin">
+        <a class="topnav-icon" [routerLink]="['/admin']"></a>
+     <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #admin="matMenu">
+      <button mat-menu-item >
+        <span>Admin</span>
+      </button> 
+      <button mat-menu-item>
+      <span>Guest</span>
+    </button>  
+    </mat-menu>
     <button class="hidden-sm" mat-icon-button [matMenuTriggerFor]="language">
         <mat-icon>language</mat-icon>
     </button>

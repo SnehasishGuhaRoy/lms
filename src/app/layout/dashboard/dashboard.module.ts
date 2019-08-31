@@ -7,7 +7,7 @@ import { StatModule } from '../../shared/modules/stat/stat.module';
 import { SharedModule } from '../../shared/shared.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-
+//import {AdminComponent} from 'src/app/login/admin/admin.component';
 @NgModule({
     imports: [
         CommonModule,

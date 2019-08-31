@@ -40,4 +40,9 @@ export class TopnavComponent implements OnInit {
     changeLang(language: string) {
         this.translate.use(language);
     }
+
+    adminlogin(){
+        //localStorage.setItem('isLoggedin','true');
+        this.router.navigate(['/admin']);
+    }
 }
