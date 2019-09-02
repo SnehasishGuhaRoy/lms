@@ -9,23 +9,21 @@ import { Router } from '@angular/router';
 })
 export class MakeSelectionComponent implements OnInit {
 
-  makeSelection : String;
-  constructor(private router: Router,public modalRef: MatDialogRef<MakeSelectionComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  makeSelection: String;
+  constructor(private router: Router, public modalRef: MatDialogRef<MakeSelectionComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
   }
 
-  onSelect(){
-    if (this.makeSelection = 'Student'){
-        this.modalRef.close();
-        this.router.navigate(['/login/signUp']);
-    }
-    if (this.makeSelection = 'Teaacher'){
+  onSelect() {
+    this.modalRef.close();
+    this.router.navigate(['/login/signUp'],{queryParams:{
+      type: (!!this.makeSelection ? this.makeSelection.toLocaleUpperCase() : "" )}
+    });
 
-    }
   }
 
-  close(){
+  close() {
     this.modalRef.close();
   }
 

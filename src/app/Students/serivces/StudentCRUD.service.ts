@@ -15,10 +15,10 @@ export class CrudService {
   studentsList: Student[];
   id = 'user';
 
-  addStudent(data: Student) {
+  addStudent(data: any) {
     return this.fireStore.collection('students').add(data)
     .then(() =>{
-      this.fireStore.collection('students').add(data);
+      this.fireStore.collection('studentLogin').add(data);
     });
   }
 

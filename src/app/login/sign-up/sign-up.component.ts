@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators, FormsModule, NgForm } from '@angula
 import { MatDialogRef } from '@angular/material';
 import { CrudService } from 'src/app/Students/serivces/StudentCRUD.service';
 import { LoginService } from '../login.service';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,15 +14,21 @@ import { LoginService } from '../login.service';
 export class SignUpComponent implements OnInit {
 
   signUp: FormGroup;
+  ut:string;
 
-  constructor(public fb: FormBuilder, public service: CrudService, public loginService : LoginService) {
+  constructor(public fb: FormBuilder, public service: CrudService, 
+    public loginService: LoginService,
+    activeRoute:ActivatedRoute 
+    ) {
 
-    let loginDetails : FormGroup = fb.group({
-      'UserName' : [null, Validators.required],
-      'Password' : [null, Validators.required]
+     this.ut=activeRoute.snapshot.queryParamMap.get('type');
+      this.ut=this.ut && this.ut.toLocaleUpperCase()=='STUDENT' ? 'STUDENT':'TEACHER';
+    let loginDetails: FormGroup = fb.group({
+      'UserName': [null, Validators.required],
+      'Password': [null, Validators.required]
     });
 
-    let  studentDetails: FormGroup = fb.group({
+    let studentDetails: FormGroup = fb.group({
       'firstName': [null, Validators.required],
       'lastName': [null, Validators.required],
       'email': [null, Validators.compose([Validators.required, Validators.email])],
@@ -31,9 +39,17 @@ export class SignUpComponent implements OnInit {
       'location': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(30)])]
     });
 
+
+    let teacherDetails: FormGroup = fb.group({
+      'firstName': [null, Validators.required],
+      'lastName': [null, Validators.required],
+      'email': [null, Validators.compose([Validators.required, Validators.email])],
+      'phoneNo': [null, Validators.compose([Validators.required/* , Validators.pattern('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/') */])],
+    });
+
     this.signUp = fb.group({
-      login:loginDetails,
-      details:studentDetails
+      login: loginDetails,
+      details: this.ut === 'TEACHER' ? teacherDetails : studentDetails
     });
 
   }
@@ -41,12 +57,17 @@ export class SignUpComponent implements OnInit {
 
   addStudent() {
     console.log("inside Add");
-      if(this.signUp.valid){
+    if (this.signUp.valid) {
       console.log("Inside valid");
-      this.service.addStudent(this.signUp.value);  
+      this.service.addStudent(this.signUp.value);
     }
   }
 
-  ngOnInit() {}
+  onClose() {
+    this.router.navigate(['/login']);
+  }
+  ngOnInit() { 
+
+  }
 
 }

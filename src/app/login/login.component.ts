@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
      signUp(){
         this.dialog.open(MakeSelectionComponent,{
-        width: '600px',
+        /* width: '600px', */
         data : {'itemsList': this.itemsList},
         disableClose : true
       });
