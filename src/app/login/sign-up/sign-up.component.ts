@@ -18,7 +18,8 @@ export class SignUpComponent implements OnInit {
 
   constructor(public fb: FormBuilder, public service: CrudService, 
     public loginService: LoginService,
-    activeRoute:ActivatedRoute , router:Router
+    activeRoute:ActivatedRoute, 
+    public router : Router
     ) {
 
      this.ut=activeRoute.snapshot.queryParamMap.get('type');
