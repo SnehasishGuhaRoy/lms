@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AutofocusModule } from 'angular-autofocus-fix';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { CKEditorModule } from 'ng2-ckeditor';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule, NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { CronEditorModule } from "cron-editor";
 import { TimezonePickerModule } from 'ng2-timezone-selector';
@@ -27,6 +27,7 @@ import { environment } from 'src/environments/environment';
     NgxGraphModule,
     ContextMenuModule,
     AngularFireModule.initializeApp(environment.firebase),
+    NgbModalModule
   ],
   exports: [
     TranslateModule,
@@ -39,7 +40,8 @@ import { environment } from 'src/environments/environment';
     TimezonePickerModule,
     NgxGraphModule,
     ContextMenuModule,
-    AngularFireModule
+    AngularFireModule,
+    NgbModalModule
   ]
 })
 export class ThirdPartyModule { }

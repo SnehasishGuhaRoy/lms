@@ -5,11 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../shared/library/material.module';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
-import { SignUpComponent } from "../login/sign-up/sign-up.component";
 import { StudentModule } from '../Students/student/student.module';
 import { ThirdPartyModule } from '../shared/library/third-party.module';
-import {AdminComponent} from 'src/app/login/admin/admin.component';
-
+import { MakeSelectionComponent } from './make-selection/make-selection.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
     imports: [
@@ -23,7 +22,10 @@ import {AdminComponent} from 'src/app/login/admin/admin.component';
         FlexLayoutModule.withConfig({addFlexToParent: false})
     ],
     declarations: [SignUpComponent,
-        LoginComponent, AdminComponent
-        ]
+        LoginComponent,
+        MakeSelectionComponent],
+    entryComponents: [
+        MakeSelectionComponent
+          ]
 })
 export class LoginModule {}

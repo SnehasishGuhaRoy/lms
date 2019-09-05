@@ -1,0 +1,20 @@
+<mat-card class="popup">
+  <div>
+    <label>Choose the Catagory:</label>
+    <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">x</span>
+    </button> 
+  </div>
+  
+  <mat-radio-group
+        [(ngModel)]="makeSelection">
+      <mat-radio-button class="example-radio-button" *ngFor="let item of data.itemsList" [value]="item.name">
+          {{item.name}}
+      </mat-radio-button>
+  </mat-radio-group>
+  
+  <div>
+    <button mat-raised-button color="primary" [disabled]="!makeSelection" (click)="onSelect()">Select</button>&nbsp;&nbsp;
+    <button mat-raised-button color="primary" (click)="close()">Cancel</button>
+  </div> 
+</mat-card>

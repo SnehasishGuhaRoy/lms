@@ -15,9 +15,11 @@ export class CrudService {
   studentsList: Student[];
   id = 'user';
 
-  addStudent(data: Student) {
-    data.studentId = String(++CrudService.count);
-    this.fireStore.collection('students').add(data);
+  addStudent(data: any) {
+    return this.fireStore.collection('students').add(data)
+    .then(() =>{
+      this.fireStore.collection('studentLogin').add(data);
+    });
   }
 
   getStudents() {
