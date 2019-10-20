@@ -1,0 +1,49 @@
+<mat-card class="signup" *ngIf = "studentDetails">
+    <mat-card-header class="header">
+        <mat-card-title>Registration form:</mat-card-title>
+        <mat-card-subtitle style="color: aliceblue">Wellcome to LMS</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <form [formGroup]="details" (ngSubmit)="modifyStudent()">
+
+                    <mat-form-field style="width: 100%">
+                        <input formControlName="firstName" matInput placeholder="First Name :">
+                    </mat-form-field>
+                    <mat-form-field style="width: 100%">
+                        <input formControlName="lastName" matInput placeholder="Last Name :">
+                    </mat-form-field>
+                    <mat-form-field style="width: 100%">
+                        <input formControlName="email" matInput placeholder="Email-ID :">
+                    </mat-form-field>
+
+                    <mat-form-field style="width: 100%">
+                        <input formControlName="phoneNo" matInput placeholder="Phone Number :">
+                    </mat-form-field>
+
+                    <mat-form-field style="width: 100%">
+                        <input formControlName="subject" matInput placeholder="Subject :">
+                    </mat-form-field>
+
+                    <mat-form-field style="width: 100%">
+                        <input formControlName="class" matInput placeholder="Class :">
+                    </mat-form-field>
+
+                    <mat-form-field style="width: 100%">
+                        <input formControlName="languageKnnown" matInput placeholder="Language Known :">
+                    </mat-form-field>
+                    <mat-form-field style="width: 100%">
+                            <input formControlName="location" matInput placeholder="Location :">
+                    </mat-form-field>
+
+
+
+             <div class="example-button-row">
+                <button mat-raised-button color="primary" type="submit" [disabled] = "isDisabled" (click)="modifyStudent()">Save</button>
+                <button mat-raised-button color="primary" type="button" (click)="onEdit()">Edit</button>
+            </div>
+            
+        </form>
+    </mat-card-content>
+</mat-card>

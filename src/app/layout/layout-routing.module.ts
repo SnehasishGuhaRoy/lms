@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 
@@ -9,12 +9,16 @@ const routes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: 'home/dashboard'
+                redirectTo: 'dashboard'
             },
             {
-                path: 'home/dashboard',
-                loadChildren: './dashboard/dashboard.module#DashboardModule'
+                path: 'dashboard',
+                loadChildren: './dashboard/dashboard.module#DashboardModule',
             },
+            {
+                path: 'student',
+                loadChildren: '../Students/student/student.module#StudentModule'
+            }
 
         ]
     }
@@ -24,4 +28,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class LayoutRoutingModule {}
+export class LayoutRoutingModule { }

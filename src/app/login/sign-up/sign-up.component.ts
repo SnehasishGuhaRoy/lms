@@ -24,6 +24,7 @@ export class SignUpComponent implements OnInit {
 
      this.ut=activeRoute.snapshot.queryParamMap.get('type');
       this.ut=this.ut && this.ut.toLocaleUpperCase()=='STUDENT' ? 'STUDENT':'TEACHER';
+      localStorage.setItem('loginType', this.ut);
     let loginDetails: FormGroup = fb.group({
       'UserName': [null, Validators.required],
       'Password': [null, Validators.required]
@@ -57,10 +58,18 @@ export class SignUpComponent implements OnInit {
 
 
   addStudent() {
-    console.log("inside Add");
-    if (this.signUp.valid) {
-      console.log("Inside valid");
-      this.service.addStudent(this.signUp.value);
+    this.signUp.value.login["studentType"] = this.ut;
+    this.signUp.value.details["UserName"] =  this.signUp.value.login.UserName;
+    if (this.ut === 'TEACHER'){
+
+    }
+    else{
+      if (this.signUp.valid) {
+        this.service.addStudent(this.signUp.value.details).subscribe(x=>{
+          this.loginService.addCredential(this.signUp.value.login);
+        });
+        this.router.navigate(['/login']);
+    }
     }
   }
 

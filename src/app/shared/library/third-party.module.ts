@@ -12,6 +12,7 @@ import { NgxGraphModule } from "@swimlane/ngx-graph";
 import { ContextMenuModule } from '@ctrl/ngx-rightclick';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [],
@@ -42,6 +43,7 @@ import { environment } from 'src/environments/environment';
     ContextMenuModule,
     AngularFireModule,
     NgbModalModule
-  ]
+  ],
+  providers: [AngularFirestore]
 })
 export class ThirdPartyModule { }

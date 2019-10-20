@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
     selector: 'app-sidebar',
@@ -9,19 +10,42 @@ export class SidebarComponent implements OnInit {
     public showMenu: string;
     public swMenu: string;
     public swMenuReport: string;
-    public openWorkFlowSubMenu : string;
-    public swMenutargetConfiguration  :string;
+    public openWorkFlowSubMenu: string;
+    public swMenutargetConfiguration: string;
+    public loginType;
+    public radioList;
+    public studentList = [{
+        name: "Profile",
+        routerLink: "/home/student/profile"
+    },
+    {
+        name: "Search Teacher",
+        routerLink: "/home/student/SreachTeacher"
+    }];
+    public tacherList = [{
+        name: "Profile",
+        routerLink: "/TeacherProfile"
+    },
+    {
+        name: "Request List",
+        routerLink: "/StudentRequest"
+    }];
 
-
-    constructor() {}
+    constructor(public route: Router) { }
 
     ngOnInit() {
         this.showMenu = '';
         this.swMenu = '';
-        this.swMenuReport='';
-        this.openWorkFlowSubMenu='';
-        this.swMenutargetConfiguration='';
-
+        this.swMenuReport = '';
+        this.openWorkFlowSubMenu = '';
+        this.swMenutargetConfiguration = '';
+        this.loginType = localStorage.getItem('loginType');
+        if (this.loginType = 'Student') {
+            this.radioList = this.studentList;
+        }
+        else {
+            this.radioList = this.tacherList;
+        }
     }
 
     addExpandClass(element: any) {
@@ -32,6 +56,10 @@ export class SidebarComponent implements OnInit {
         }
     }
 
+    routingLink(item: any) {
+        this.route.navigate([item.routerLink]);
+    }
+
     quaryConfigurationExpand(element: any) {
         if (element === this.swMenu) {
             this.swMenu = '0';
@@ -40,7 +68,7 @@ export class SidebarComponent implements OnInit {
         }
     }
 
-    targetConfigurationExpand(element : any){
+    targetConfigurationExpand(element: any) {
         if (element === this.swMenutargetConfiguration) {
             this.swMenutargetConfiguration = '0';
         } else {
