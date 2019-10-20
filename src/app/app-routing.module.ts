@@ -5,6 +5,11 @@ import { AuthGuard } from './shared/guard/auth.guard';
 const routes: Routes = [
     {
         path: '',
+        redirectTo:"home",
+        pathMatch:"full"
+    },
+    {
+        path: 'home',
         loadChildren: './layout/layout.module#LayoutModule',
         canActivate: [AuthGuard]
     },

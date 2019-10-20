@@ -1,11 +1,11 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { from, Observable } from 'rxjs';
 import { Student } from 'src/app/model/Student';
-import { StudentModule } from '../student/student.module';
 
 
 @Injectable({
-  providedIn: StudentModule
+  providedIn: 'root'
 })
 export class CrudService {
 
@@ -15,15 +15,24 @@ export class CrudService {
   studentsList: Student[];
   id = 'user';
 
-  addStudent(data: any) {
-    return this.fireStore.collection('students').add(data)
-    .then(() =>{
-      this.fireStore.collection('studentLogin').add(data);
-    });
+  addStudent(data: any): Observable<firebase.firestore.DocumentReference> {
+    return from(this.fireStore.collection('students').add(data));
   }
 
   getStudents() {
     return this.fireStore.collection('students').snapshotChanges();
+  }
+
+  getStudenByUserId(userName: String): Observable<any[]> {
+
+    return new Observable(sub => {
+      this.fireStore
+        .collection("students", ref => ref.where("UserName", "==", userName))
+        .valueChanges().subscribe(x => {
+          sub.next(x);
+          sub.complete();
+        });
+    });
   }
 
 }
