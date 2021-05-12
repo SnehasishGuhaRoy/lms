@@ -33,7 +33,7 @@
     "angular-froala-wysiwyg": "^3.0.2",
     "angular-moment-timezone": "^1.7.1",
     "bootstrap": "4.3.1",
-    "chart.js": "2.7.3",
+    "chart.js": "2.9.4",
     "core-js": "2.5.7",
     "cron-editor": "^2.1.7",
     "firebase": "^6.4.2",
